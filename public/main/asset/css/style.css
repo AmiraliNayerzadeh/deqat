@@ -1,0 +1,149 @@
+﻿@import url(./fonts/fontiran.css); /* لینک فایلی که وظیفه بارگذاری فونت‌ها را برعهده دارد */
+body {
+	font-family: KalamehWebFaNum !important;
+	direction: rtl;
+	background-color: #f5f5f5;
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: KalamehWebFaNum !important;
+}
+
+.wrapper {
+	max-width: 900px;
+	margin: 20px auto;
+	padding: 30px;
+	background-color: #fff;
+	border-radius: 15px;
+	box-shadow: 0 0 10px #aaa;
+}
+
+.box100 p, .box200 p, .box300 p, .box400 p, .box500 p, .box600 p, .box700 p, .box800 p, .box900 p{
+	font-size: 20px;
+	margin: 0;
+}
+
+.box100, .box100 h1, .box200, .box200 h1, .box300, .box300 h1, .box400, .box400 h1, .box500, .box500 h1, .box600, .box600 h1, .box700, .box700 h1, .box800, .box800 h1, .box900, .box900 h1{
+  	margin: 30px 0 0 0;
+	font-size: 25px;
+}
+
+
+.box100, .box100 h1{
+	font-weight:100;
+}
+
+.box200, .box200 h1{
+	font-weight:100;
+}
+
+.box300, .box300 h1{
+	font-weight:100;
+}
+
+.box400, .box400 h1{
+	font-weight:400;
+}
+
+.box500, .box500 h1{
+	font-weight:400;
+}
+
+.box600, .box600 h1{
+	font-weight:400;
+}
+
+.box700, .box700 h1{
+	font-weight:700;
+}
+
+.box800, .box800 h1{
+	font-weight:700;
+}
+
+.box900, .box900 h1{
+	font-weight:900;
+}
+
+.bg-main {
+    background-image: url('/main/image/defult/turkey-background.jpg');
+    background-size: cover;
+    background-repeat-x: no-repeat;
+    height: 25rem;
+}
+
+.bg-card {
+
+    background-image: url('/main/image/defult/Billiard-Table.jpg');
+    background-size: cover;
+    background-repeat-x: no-repeat;
+    height: 30rem;
+}
+
+
+.rating {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    font-size: 35px;
+}
+
+.rating label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    cursor: pointer;
+}
+
+.rating label:last-child {
+    position: static;
+}
+
+.rating label:nth-child(1) {
+    z-index: 5;
+}
+
+.rating label:nth-child(2) {
+    z-index: 4;
+}
+
+.rating label:nth-child(3) {
+    z-index: 3;
+}
+
+.rating label:nth-child(4) {
+    z-index: 2;
+}
+
+.rating label:nth-child(5) {
+    z-index: 1;
+}
+
+.rating label input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.rating label .icon {
+    float: left;
+    color: transparent;
+}
+
+.rating label:last-child .icon {
+    color: #000;
+}
+
+.rating:not(:hover) label input:checked ~ .icon,
+.rating:hover label:hover input ~ .icon {
+    color: #09f;
+}
+
+.rating label input:focus:not(:checked) ~ .icon:last-child {
+    color: #000;
+    text-shadow: 0 0 5px #09f;
+}
