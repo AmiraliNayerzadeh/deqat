@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('slug');
             $table->text('logo')->default('/main/image/defult/default-profile-icon.jpg');
             $table->text('cover')->nullable();
-            $table->text('map');
+            $table->text('map')->nullable();
             $table->longText('description')->nullable();
             $table->string('phone') ;
             $table->string('address') ;
