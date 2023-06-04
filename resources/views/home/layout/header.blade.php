@@ -1,4 +1,3 @@
-
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2">
     <!-- Container wrapper -->
@@ -21,49 +20,60 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/">خانه</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">درباره</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="{{route('city.index')}}" id="navbarDropdownMenuLink" role="button"
-                       data-mdb-toggle="dropdown" aria-expanded="false">شهر ها
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        @foreach(\App\Models\City::all() as $city)
-                        <li>
-                            <a class="dropdown-item" href="{{route('city.single' , $city->slug)}}">{{$city->name}}</a>
-                        </li>
-                        @endforeach
-                    </ul>
-                </li>
 
-                <li class="nav-item dropdown position-static">
-                    <a class="nav-link dropdown-toggle" href="{{route('home.category.index')}}" id="navbarDropdown" role="button" data-mdb-toggle="dropdown"
+                <li class="nav-item dropdown position-static ">
+                    <a class="nav-link dropdown-toggle " href="{{route('home.category.index')}}" id="navbarDropdown"
+                       role="button" data-mdb-toggle="dropdown"
                        aria-expanded="false">
                         دسته بندی ها
                     </a>
                     <!-- Dropdown menu -->
-                    <div class="dropdown-menu mt-0" aria-labelledby="navbarDropdown" style="
+                    <div class="dropdown-menu mt-0  w-100" aria-labelledby="navbarDropdown" style="
                           border-top-left-radius: 0;
                           border-top-right-radius: 0;
                         ">
                         <div class="container">
                             <div class="row my-4">
                                 @foreach(\App\Models\Category::where('parent' , '0')->get() as $category)
-                                <div class="col mb-3 mb-lg-0">
-                                    <div class="list-group list-group-flush">
-                                        <a href="{{route('home.category.archive' , $category->slug)}}" class="list-group-item list-group-item-action fw-bolder">{{$category->name}}</a>
-                                        @foreach(\App\Models\Category::where('id' , $category->id)->get() as $cate)
-                                        <a href="{{route('home.category.archive' , $cate->slug)}}" class="list-group-item list-group-item-action">{{$cate->name}}</a>
-                                        @endforeach
+                                    <div class="col mb-3 mb-lg-0">
+                                        <div class="list-group list-group-flush">
+                                            <a href="{{route('home.category.archive' , $category->slug)}}"
+                                               class="list-group-item list-group-item fw-bolder">{{$category->name}}</a>
+                                            @foreach(\App\Models\Category::where('parent' , $category->id)->get() as $cate)
+                                                    <a  href="{{route('home.category.archive' , $cate->slug)}}" class="list-group-item list-group-item-action">{{$cate->name}}</a>
+                                                @foreach(\App\Models\Category::where('parent' , $cate->id)->get() as $cat)
+                                                <a href="{{route('home.category.archive' , $cat->slug)}}" class="list-group-item list-group-item-action">{{$cat->name}}</a>
+                                                @endforeach
+                                            @endforeach
+                                        </div>
                                     </div>
-                                </div>
                                 @endforeach
 
                             </div>
                         </div>
                     </div>
                 </li>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="{{route('city.index')}}" id="navbarDropdownMenuLink"
+                       role="button"
+                       data-mdb-toggle="dropdown" aria-expanded="false">شهر ها
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        @foreach(\App\Models\City::all() as $city)
+                            <li>
+                                <a class="dropdown-item"
+                                   href="{{route('city.single' , $city->slug)}}">{{$city->name}}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">درباره</a>
+                </li>
+
             </ul>
             <!-- Left links -->
         </div>

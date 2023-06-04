@@ -45,7 +45,7 @@
                         <div class="card-body">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7698.626861183792!2d51.506947377215155!3d35.77847464808177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e04bce2a742b5%3A0x8ac235bcf82603d6!2sEtka%20Store!5e0!3m2!1sen!2s!4v1685471361431!5m2!1sen!2s"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                height="450" style="border:0; width: 100%" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
